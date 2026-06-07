@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | CinemaDB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+  <div class="container-xl">
+    <a class="navbar-brand" href="Movie%20Ticket%20Booking%20System.html"><i class="fas fa-film"></i> CinemaDB</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto gap-1" id="navbarMenu">
+        <!-- Populated by JavaScript -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container-xl">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="page-header-icon"><i class="fas fa-user-circle"></i></div>
+        <h1 class="page-header-title">User Profile</h1>
+        <p class="page-header-subtitle">Manage your account and settings</p>
+      </div>
+      <div class="col-lg-6 text-lg-end mt-3 mt-lg-0">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-lg-end mb-0">
+            <li class="breadcrumb-item"><a href="Movie%20Ticket%20Booking%20System.html">Home</a></li>
+            <li class="breadcrumb-item active">Profile</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-xl pb-4">
+  <div class="row g-4">
+
+    <!-- Profile Card -->
+    <div class="col-lg-8 animate-up">
+      <div class="form-card">
+        <div class="form-card-title"><i class="fas fa-user"></i> Personal Information</div>
+        
+        <div style="margin-bottom: 25px;">
+          <div style="display: flex; align-items: center; gap: 20px; padding: 20px; background: var(--bg-secondary); border-radius: 12px; margin-bottom: 20px;">
+            <div style="font-size: 3rem; color: var(--primary); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--bg-main); border-radius: 50%;">
+              <i class="fas fa-user"></i>
+            </div>
+            <div>
+              <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 4px;" id="profileName">Loading...</div>
+              <div style="color: var(--text-secondary); margin-bottom: 8px;" id="profileEmail">—</div>
+              <div>
+                <span class="badge" id="roleBadge" style="padding: 6px 12px; font-size: 0.8rem;">—</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full Name</label>
+              <div style="padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-secondary);">
+                <span id="displayName">—</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email Address</label>
+              <div style="padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-secondary);">
+                <span id="displayEmail">—</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone Number</label>
+              <div style="padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-secondary);">
+                <span id="displayPhone">—</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Account Type</label>
+              <div style="padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-secondary);">
+                <span id="displayRole">—</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Member Since</label>
+              <div style="padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-secondary);">
+                <span id="displayJoinDate">—</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Login Time</label>
+              <div style="padding: 12px 14px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-secondary);">
+                <span id="displayLoginTime">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account Permissions -->
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+          <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px;">
+            <i class="fas fa-lock me-2"></i> Account Permissions
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div style="padding: 15px; background: var(--bg-secondary); border-radius: 8px; border-left: 4px solid var(--primary);">
+                <div style="font-weight: 600; margin-bottom: 8px;"><i class="fas fa-ticket-alt me-2" style="color: var(--primary);"></i> Book Tickets</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">Can create and manage ticket bookings</div>
+                <div style="margin-top: 8px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> <span style="color: var(--success);">Enabled</span></div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div style="padding: 15px; background: var(--bg-secondary); border-radius: 8px; border-left: 4px solid var(--info);">
+                <div style="font-weight: 600; margin-bottom: 8px;"><i class="fas fa-eye me-2" style="color: var(--info);"></i> View Movies</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">Can browse and view movie details</div>
+                <div style="margin-top: 8px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> <span style="color: var(--success);">Enabled</span></div>
+              </div>
+            </div>
+
+            <div class="col-md-6" id="adminPermission" style="display: none;">
+              <div style="padding: 15px; background: var(--bg-secondary); border-radius: 8px; border-left: 4px solid var(--warning);">
+                <div style="font-weight: 600; margin-bottom: 8px;"><i class="fas fa-film me-2" style="color: var(--warning);"></i> Manage Movies</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">Can add, edit, and delete movies</div>
+                <div style="margin-top: 8px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> <span style="color: var(--success);">Enabled</span></div>
+              </div>
+            </div>
+
+            <div class="col-md-6" id="adminPermission2" style="display: none;">
+              <div style="padding: 15px; background: var(--bg-secondary); border-radius: 8px; border-left: 4px solid var(--warning);">
+                <div style="font-weight: 600; margin-bottom: 8px;"><i class="fas fa-calendar-alt me-2" style="color: var(--warning);"></i> Manage Shows</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">Can schedule and edit movie shows</div>
+                <div style="margin-top: 8px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> <span style="color: var(--success);">Enabled</span></div>
+              </div>
+            </div>
+
+            <div class="col-md-6" id="adminPermission3" style="display: none;">
+              <div style="padding: 15px; background: var(--bg-secondary); border-radius: 8px; border-left: 4px solid var(--warning);">
+                <div style="font-weight: 600; margin-bottom: 8px;"><i class="fas fa-users me-2" style="color: var(--warning);"></i> Manage Customers</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">Can manage customer records</div>
+                <div style="margin-top: 8px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> <span style="color: var(--success);">Enabled</span></div>
+              </div>
+            </div>
+
+            <div class="col-md-6" id="adminPermission4" style="display: none;">
+              <div style="padding: 15px; background: var(--bg-secondary); border-radius: 8px; border-left: 4px solid var(--warning);">
+                <div style="font-weight: 600; margin-bottom: 8px;"><i class="fas fa-chart-bar me-2" style="color: var(--warning);"></i> View Reports</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary);">Can access reports and analytics</div>
+                <div style="margin-top: 8px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> <span style="color: var(--success);">Enabled</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="margin-top: 30px; display: flex; gap: 12px;">
+          <button class="btn-submit" onclick="editProfile()"><i class="fas fa-edit me-1"></i> Edit Profile</button>
+          <button onclick="logout()" style="padding: 12px 24px; background: transparent; border: 2px solid var(--danger); color: var(--danger); border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition);" 
+            onmouseover="this.style.background='var(--danger)'; this.style.color='#fff'" 
+            onmouseout="this.style.background='transparent'; this.style.color='var(--danger)';">
+            <i class="fas fa-sign-out-alt me-1"></i> Logout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Sidebar -->
+    <div class="col-lg-4">
+      <!-- Bookings Stats -->
+      <div class="stat-card bookings animate-up delay-1" style="margin-bottom: 20px;">
+        <div class="stat-icon"><i class="fas fa-ticket-alt"></i></div>
+        <div>
+          <div class="stat-number" id="userBookingCount">0</div>
+          <div class="stat-label">Your Bookings</div>
+          <div class="stat-change up"><i class="fas fa-circle me-1" style="font-size:0.4rem"></i>Created by you</div>
+        </div>
+      </div>
+
+      <!-- Account Status -->
+      <div class="form-card animate-up delay-2">
+        <div class="form-card-title"><i class="fas fa-shield-alt"></i> Account Status</div>
+        <div style="margin-top: 15px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 12px;">
+            <span>Account Status</span>
+            <span style="background: var(--success); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">ACTIVE</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 12px;">
+            <span>Email Verified</span>
+            <i class="fas fa-check-circle" style="color: var(--success); font-size: 1.1rem;"></i>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+            <span>2FA Security</span>
+            <span style="background: var(--warning); color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Disabled</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container-xl">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="footer-brand"><i class="fas fa-film"></i> Movie Ticket Booking System</div>
+        <div class="footer-text mt-1">DBMS Semester Project &bull; Group Project</div>
+      </div>
+      <div class="col-md-6 text-md-end mt-3 mt-md-0">
+        <span class="footer-badge me-2">BSCS</span>
+        <span class="footer-badge">UET Taxila</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-container" id="toastContainer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    checkAuthAndLoad();
+    loadProfileData();
+    renderNavbar();
+  });
+
+  function checkAuthAndLoad() {
+    const currentUser = JSON.parse(localStorage.getItem('cdb_currentUser'));
+    if (!currentUser) {
+      window.location.href = 'login.html';
+      return;
+    }
+  }
+
+  function loadProfileData() {
+    const currentUser = JSON.parse(localStorage.getItem('cdb_currentUser'));
+    if (!currentUser) return;
+
+    // Display user info
+    document.getElementById('profileName').textContent = currentUser.name;
+    document.getElementById('profileEmail').textContent = currentUser.email;
+    document.getElementById('displayName').textContent = currentUser.name;
+    document.getElementById('displayEmail').textContent = currentUser.email;
+    document.getElementById('displayPhone').textContent = currentUser.phone;
+    document.getElementById('displayRole').textContent = currentUser.role;
+    document.getElementById('displayLoginTime').textContent = new Date(currentUser.loginTime).toLocaleString();
+
+    // Get user from storage for join date
+    const users = JSON.parse(localStorage.getItem('cdb_users') || '[]');
+    const userDetails = users.find(u => u.email === currentUser.email);
+    if (userDetails) {
+      document.getElementById('displayJoinDate').textContent = new Date(userDetails.createdAt).toLocaleDateString();
+    }
+
+    // Set role badge
+    const roleBadge = document.getElementById('roleBadge');
+    if (currentUser.role === 'Administrator') {
+      roleBadge.textContent = 'ADMINISTRATOR';
+      roleBadge.style.background = 'rgba(229, 9, 20, 0.2)';
+      roleBadge.style.color = 'var(--primary)';
+      
+      // Show admin permissions
+      document.getElementById('adminPermission').style.display = 'block';
+      document.getElementById('adminPermission2').style.display = 'block';
+      document.getElementById('adminPermission3').style.display = 'block';
+      document.getElementById('adminPermission4').style.display = 'block';
+    } else {
+      roleBadge.textContent = 'USER';
+      roleBadge.style.background = 'rgba(0, 148, 212, 0.2)';
+      roleBadge.style.color = 'var(--info)';
+    }
+
+    // Count user bookings
+    const userBookings = typeof getBookingsForCurrentUser === 'function'
+      ? getBookingsForCurrentUser()
+      : JSON.parse(localStorage.getItem('cdb_bookings') || '[]').filter(b => {
+          const customers = JSON.parse(localStorage.getItem('cdb_customers') || '[]');
+          const customer = customers.find(c => c.id === b.customerId);
+          return customer && (
+            customer.email === currentUser.email ||
+            customer.name === currentUser.name
+          );
+        });
+    document.getElementById('userBookingCount').textContent = userBookings.length;
+  }
+
+  function editProfile() {
+    alert('Edit profile feature coming soon!');
+  }
+</script>
+</body>
+</html>
